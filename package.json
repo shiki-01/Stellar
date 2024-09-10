@@ -1,0 +1,46 @@
+{
+  "name": "stellar",
+  "type": "module",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "shiki",
+  "description": "A fast, modern, and powerful presentation framework",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shiki-01/Stellar.git"
+  },
+  "keywords": [
+    "presentation",
+    "framework",
+    "astro",
+    "electron"
+  ],
+  "main": "public/script/electron.js",
+  "scripts": {
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "electron": "wait-on tcp:4321 && electron .",
+    "dev": "concurrently \"npm run start\" \"npm run electron\"",
+    "pack": "electron-builder --dir",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.3",
+    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/ts-plugin": "^1.10.2",
+    "astro": "^4.15.4",
+    "astro-icon": "^1.1.1",
+    "concurrently": "^9.0.0",
+    "electron-is-dev": "^3.0.1",
+    "electron-squirrel-startup": "^1.0.1",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.6.2",
+    "wait-on": "^8.0.0"
+  },
+  "devDependencies": {
+    "electron": "^32.0.2"
+  }
+}

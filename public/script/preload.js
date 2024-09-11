@@ -9,5 +9,8 @@ contextBridge.exposeInMainWorld('electron', {
     },
     removeAllListeners: (channel) => {
         ipcRenderer.removeAllListeners(channel);
+    },
+    showContextMenu: () => {
+        ipcRenderer.invoke('show-context-menu').then(r => console.log(r));
     }
 });

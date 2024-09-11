@@ -31,6 +31,8 @@
     "@astrojs/check": "^0.9.3",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/ts-plugin": "^1.10.2",
+    "@iconify-json/ic": "^1.2.0",
+    "@iconify-json/mdi": "^1.2.0",
     "astro": "^4.15.4",
     "astro-icon": "^1.1.1",
     "concurrently": "^9.0.0",

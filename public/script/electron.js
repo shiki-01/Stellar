@@ -1,6 +1,8 @@
 import path from 'path';
-import {app, BrowserWindow} from 'electron';
+import {app, BrowserWindow, globalShortcut} from 'electron';
 import isDev from 'electron-is-dev';
+import {menu} from "./menu.js";
+import {ipcMain} from 'electron';
 
 const __filename = new URL(import.meta.url).pathname;
 const __dirname = path.dirname(__filename);
@@ -9,6 +11,7 @@ const createWindow = () => {
     const win = new BrowserWindow({
         width: 800,
         height: 600,
+        frame: false,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
@@ -23,7 +26,12 @@ const createWindow = () => {
     ).then(r => console.log(r));
 }
 
-app.whenReady().then(createWindow);
+app.whenReady().then(() => {
+    createWindow()
+    globalShortcut.register('F12', () => {
+        BrowserWindow.getFocusedWindow().webContents.openDevTools()
+    })
+});
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
@@ -36,3 +44,7 @@ app.on('activate', () => {
         createWindow();
     }
 });
+
+ipcMain.handle(`show-context-menu`, () => {
+    menu.popup()
+})

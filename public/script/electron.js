@@ -1,5 +1,5 @@
 import path from 'path';
-import {app, BrowserWindow, globalShortcut} from 'electron';
+import {app, BrowserWindow, globalShortcut, Menu} from 'electron';
 import isDev from 'electron-is-dev';
 import {menu} from "./menu.js";
 import {ipcMain} from 'electron';
@@ -28,9 +28,7 @@ const createWindow = () => {
 
 app.whenReady().then(() => {
     createWindow()
-    globalShortcut.register('F12', () => {
-        BrowserWindow.getFocusedWindow().webContents.openDevTools()
-    })
+    Menu.setApplicationMenu(menu)
 });
 
 app.on('window-all-closed', () => {

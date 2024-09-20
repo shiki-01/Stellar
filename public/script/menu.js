@@ -1,6 +1,8 @@
-import { Menu } from 'electron';
+import { Menu, MenuItem } from 'electron';
 
-export const menu = Menu.buildFromTemplate([
+export const menu = new Menu()
+
+menu.append(new MenuItem([
     {
         label: 'File',
         submenu: [
@@ -21,7 +23,7 @@ export const menu = Menu.buildFromTemplate([
             },
             {
                 label: 'Toggle DevTools',
-                accelerator: 'CmdOrCtrl+Shift+I',
+                accelerator: 'CmdOrCtrl+Shift+IOrF12',
                 role: 'toggleDevTools',
             },
         ],
@@ -35,4 +37,4 @@ export const menu = Menu.buildFromTemplate([
             },
         ],
     },
-]);
+]));

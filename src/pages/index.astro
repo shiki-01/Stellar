@@ -1,31 +1,7 @@
 ---
-import { Icon } from 'astro-icon/components'
+import Layout from '@layouts/default.astro'
 ---
 
-<html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <link rel="icon" type="image/svg+xml" href="/icon/favicon.svg"/>
-    <meta name="viewport" content="width=device-width"/>
-    <meta name="generator" content={Astro.generator}/>
-    <title>Astro</title>
-    <style>
-        .drag {
-            -webkit-app-region: drag;
-        }
-    </style>
-</head>
-<body>
-<div class="drag w-screen h-[20px] flex justify-between">
-    <Icon name="ic:round-menu" />
-</div>
-<script>
-    if (typeof window !== 'undefined') {
-        window.addEventListener('contextmenu', (e) => {
-            e.preventDefault()
-            window.electron.showContextMenu()
-        })
-    }
-</script>
-</body>
-</html>
+<Layout>
+    <h1>Hello, Astro!</h1>
+</Layout>

@@ -1,8 +1,8 @@
-import { Menu, MenuItem } from 'electron';
+import { Menu } from 'electron';
 
 export const menu = new Menu()
 
-menu.append(new MenuItem([
+export const menuItems = [
     {
         label: 'File',
         submenu: [
@@ -23,7 +23,7 @@ menu.append(new MenuItem([
             },
             {
                 label: 'Toggle DevTools',
-                accelerator: 'CmdOrCtrl+Shift+IOrF12',
+                accelerator: 'F12',
                 role: 'toggleDevTools',
             },
         ],
@@ -37,4 +37,4 @@ menu.append(new MenuItem([
             },
         ],
     },
-]));
+]

@@ -1,0 +1,41 @@
+---
+import { Icon } from 'astro-icon/components'
+import HeaderIcon from "@sc/HeaderIcon.svelte";
+import { icons } from "../lib";
+---
+
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="icon" type="image/svg+xml" href="/icon/favicon.svg"/>
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="generator" content={Astro.generator}/>
+    <title>Astro</title>
+    <style lang="postcss">
+        .drag {
+            -webkit-app-region: drag;
+            cursor: grab;
+        }
+    </style>
+</head>
+<body class="w-screen h-screen flex flex-col">
+<div class="w-screen h-[40px] grid grid-cols-[40px_1fr_120px] justify-between items-center">
+    <div class="w-[40px] h-[40px] flex justify-center items-center">
+        <Icon name="ic:round-menu" class="w-[24px] h-[24px]" />
+    </div>
+    <span class="block w-full h-full drag" />
+    <div class="h-[40px] flex flex-row items-center">
+        {Object.entries(icons).map(([icon]) => (
+            <div class="w-[40px] h-[40px] flex justify-center items-center">
+                <HeaderIcon onClick={icon} client:only="svelte" >
+                    <Icon name={icons[icon].icon} class="w-[24px] h-[24px]" />
+                </HeaderIcon>
+            </div>
+        ))}
+    </div>
+</div>
+<div class="m-2">
+    <slot />
+</div>
+</body>
+</html>

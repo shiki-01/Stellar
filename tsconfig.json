@@ -1,5 +1,8 @@
 {
   "extends": "astro/tsconfigs/strict",
+  "include": [
+    "src"
+  ],
   "compilerOptions": {
     "plugins": [
       {
@@ -17,6 +20,12 @@
       ],
       "@layouts/*": [
         "./src/layouts/*"
+      ],
+      "@lib/*": [
+        "./src/lib/*"
+      ],
+      "@sc/*": [
+        "./src/svelte/components/*"
       ]
     }
   }

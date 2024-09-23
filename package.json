@@ -29,23 +29,38 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
+    "@astrojs/react": "^3.6.2",
     "@astrojs/svelte": "^5.7.1",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/ts-plugin": "^1.10.2",
     "@iconify-json/ic": "^1.2.0",
     "@iconify-json/mdi": "^1.2.0",
+    "@types/react": "^18.3.8",
+    "@types/react-dom": "^18.3.0",
     "astro": "^4.15.4",
     "astro-icon": "^1.1.1",
+    "bits-ui": "^0.21.15",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "concurrently": "^9.0.0",
     "electron-is-dev": "^3.0.1",
     "electron-squirrel-startup": "^1.0.1",
+    "framer-motion": "^11.5.6",
+    "lucide-react": "^0.445.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "svelte": "^4.2.19",
+    "svelte-motion": "^0.12.2",
+    "tailwind-merge": "^2.5.2",
     "tailwindcss": "^3.4.10",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.6.2",
     "wait-on": "^8.0.0"
   },
   "devDependencies": {
     "@iconify/svelte": "^4.0.2",
-    "electron": "^32.0.2"
+    "@melt-ui/pp": "^0.3.2",
+    "@melt-ui/svelte": "^0.83.0",
+    "electron": "^32.1.2"
   }
 }

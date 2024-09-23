@@ -15,4 +15,14 @@ contextBridge.exposeInMainWorld('electron', {
         minimize: () => ipcRenderer.invoke('minimize'),
         maximize: () => ipcRenderer.invoke('maximize'),
     },
+    settings: {
+        get: () => ipcRenderer.invoke('getSettings'),
+        set: (data) => ipcRenderer.invoke('setSettings', data),
+    },
+    projects: {
+        get: () => ipcRenderer.invoke('getProjects'),
+        create: (name) => ipcRenderer.invoke('createProject', name),
+        delete: (name) => ipcRenderer.invoke('deleteProject', name),
+        save: (name, settings) => ipcRenderer.invoke('saveProject', name, settings),
+    }
 });

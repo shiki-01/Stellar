@@ -15,6 +15,9 @@
       "/*": [
         "./src/*"
       ],
+      "@/*": [
+        "./src/*"
+      ],
       "@components/*": [
         "./src/components/*"
       ],
@@ -27,6 +30,8 @@
       "@sc/*": [
         "./src/svelte/components/*"
       ]
-    }
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

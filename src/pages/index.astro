@@ -1,7 +1,16 @@
 ---
+import '../style/globals.css'
 import Layout from '@layouts/default.astro'
+import Tab from '@sc/StartTab.svelte'
+import {Icon} from "astro-icon/components";
+import { RainbowButton } from '@components/magicui/rainbow-button';
 ---
 
 <Layout>
-    <h1>Hello, Astro!</h1>
+    <Tab client:only="svelte" />
+    <div class="absolute bottom-5 right-5">
+        <RainbowButton className="w-fit h-fit p-2 bg-sky-500 rounded-full shadow-lg shadow-sky-500/40 transition-shadow hover:shadow-xl">
+            <Icon name="ic:round-add" class="w-10 h-10 text-white" />
+        </RainbowButton>
+    </div>
 </Layout>

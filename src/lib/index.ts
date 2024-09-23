@@ -19,3 +19,10 @@ export const icons: Icons = {
         'action': () => window.electron.window.close(),
     },
 }
+
+export interface Project {
+    name: string,
+    settings: any,
+    created: Date,
+    modified: Date,
+}

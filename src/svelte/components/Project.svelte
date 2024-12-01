@@ -16,6 +16,14 @@
 
 {#if project}
     <div class="w-full h-full flex flex-col gap-4">
+        <div>
+            <button
+                    class="bg-blue-500 text-white px-4 py-2 rounded-md"
+                    on:click={() => window.location.href = "/"}
+            >
+                Back
+            </button>
+        </div>
         <div class="flex flex-col gap-2">
             <h1 class="text-2xl font-bold">Project</h1>
             <p>Project ID: {id}</p>

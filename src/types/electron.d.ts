@@ -14,8 +14,9 @@ declare global {
                 set: (key: string, value: any) => void;
             },
             projects: {
-                get: () => any;
-                create: (name: string) => void;
+                gets: () => any;
+                get: (name: string) => any;
+                create: (name: { name: string; description: string; tags: string[] }) => void;
                 delete: (name: string) => void;
                 save: (name: string, settings: any) => void;
             }

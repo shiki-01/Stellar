@@ -1,0 +1,17 @@
+---
+import '../../style/globals.css'
+import Layout from '@layouts/default.astro'
+import Project from "@sc/Project.svelte";
+export const prerender = false;
+const id: string | null = Astro.url.searchParams.get('id')
+---
+
+<Layout>
+    {id ?
+            <div class="w-full h-full p-6">
+                <Project id={id} client:only="svelte"/>
+            </div>
+        :
+            <div>Project not found</div>
+    }
+</Layout>

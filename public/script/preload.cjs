@@ -20,7 +20,8 @@ contextBridge.exposeInMainWorld('electron', {
         set: (data) => ipcRenderer.invoke('setSettings', data),
     },
     projects: {
-        get: () => ipcRenderer.invoke('getProjects'),
+        gets: () => ipcRenderer.invoke('getProjects'),
+        get: (name) => ipcRenderer.invoke('getProject', name),
         create: (name) => ipcRenderer.invoke('createProject', name),
         delete: (name) => ipcRenderer.invoke('deleteProject', name),
         save: (name, settings) => ipcRenderer.invoke('saveProject', name, settings),

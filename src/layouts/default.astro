@@ -34,8 +34,9 @@ import { icons } from "../lib";
         ))}
     </div>
 </div>
-<div class="p-2 w-full h-full relative">
+<div class="w-[100svw] h-[calc(100svh-40px)] overflow-hidden relative">
     <slot />
 </div>
+<slot name="scripts"/>
 </body>
 </html>

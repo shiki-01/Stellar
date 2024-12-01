@@ -29,6 +29,9 @@
       ],
       "@sc/*": [
         "./src/svelte/components/*"
+      ],
+      "@types/*": [
+        "./src/types/*"
       ]
     },
     "jsx": "react-jsx",

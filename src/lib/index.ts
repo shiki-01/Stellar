@@ -21,8 +21,13 @@ export const icons: Icons = {
 }
 
 export interface Project {
-    name: string,
-    settings: any,
-    created: Date,
-    modified: Date,
+    settings: {
+        name: string,
+        created: Date,
+        modified: Date,
+        description?: string,
+        version: string,
+        tags?: string[],
+    },
+    id: string,
 }

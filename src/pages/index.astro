@@ -8,40 +8,60 @@ import {Icon} from "astro-icon/components";
 ---
 
 <Layout>
-    <Tab client:only="svelte"/>
-    <div class="absolute bottom-5 right-5">
+    <div class="w-full h-full flex p-4">
+        <Tab client:only="svelte"/>
+    </div>
+    <div class="absolute bottom-8 right-8" id="create-project">
         <Button
-            client:only="svelte"
-            id="create-project"
+                client:only="svelte"
         >
             <Icon name="ic:round-add" class="w-10 h-10 text-white"/>
         </Button>
     </div>
-    <Dialog
-        data-is-open="false"
-        id="create-project-dl"
-        class="data-[is-open='true']:block data-[is-open='false']:hidden"
-        title="Create Project"
-        client:only="svelte"
-    >
-        <div class="p-4">
-            <div class="flex justify-end mt-4">
-                <p>hello</p>
+
+    <div id="create-project-dl">
+        <div
+                data-is-open="false"
+                class="data-[is-open='true']:opacity-100 data-[is-open='false']:opacity-0 data-[is-open='false']:pointer-events-none transition-opacity duration-300 z-40 fixed inset-0 bg-black bg-opacity-50"
+        >
+            <div class="absolute w-[600px] h-[500px] flex flex-col rounded-2xl shadow p-4 bg-white z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <div class="flex justify-end">
+                    <button
+                            class="w-10 h-10 flex justify-center items-center"
+                            id="close-dialog"
+                    >
+                        <Icon name="ic:round-close" class="w-6 h-6 text-sky-500"/>
+                    </button>
+                </div>
+                <Dialog client:only="svelte"/>
             </div>
         </div>
-    </Dialog>
+    </div>
 
-    <script>
+    <script is:inline slot="scripts">
         let isModalOpen = false
-        const button = document.querySelector('#create-project')
-        const dialog = document.querySelector('#create-project-dl')
+        document.addEventListener('DOMContentLoaded', () => {
+            const button = document.querySelector('#create-project')
+            const dialog = document.querySelector('#create-project-dl')
 
-        console.log(button,dialog)
-        button?.addEventListener('click', () => {
-            isModalOpen = !isModalOpen
-            console.log(isModalOpen)
-
-            dialog?.setAttribute('data-is-open', isModalOpen.toString())
+            console.log(button, dialog)
+            button?.addEventListener('click', () => {
+                console.log('clicked')
+                isModalOpen = !isModalOpen
+                if (dialog.children.length > 0) {
+                    dialog.children[0].setAttribute('data-is-open', isModalOpen.toString())
+                    dialog.children[0].querySelector('#close-dialog').addEventListener('click', () => {
+                        isModalOpen = false
+                        dialog.children[0].setAttribute('data-is-open', isModalOpen.toString())
+                    })
+                    dialog.children[0].addEventListener('click', (e) => {
+                        if (e.target === dialog.children[0]) {
+                            isModalOpen = false
+                            dialog.children[0].setAttribute('data-is-open', isModalOpen.toString())
+                        }
+                    })
+                }
+            })
         })
     </script>
 </Layout>

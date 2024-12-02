@@ -54,7 +54,7 @@
 
             const dialog = document.querySelector('#create-project-dl');
 
-            if (dialog?.children.length > 0) {
+            if (dialog && dialog.children.length > 0) {
                 dialog.children[0].setAttribute('data-is-open', 'false');
             }
 
@@ -85,7 +85,7 @@
         </div>
 
         <div class="flex flex-col gap-2">
-            <label class="text-lg font-bold">Tags</label>
+            <label class="text-lg font-bold" for="tags-input">Tags</label>
             <div class="flex flex-wrap gap-2 items-center">
                 {#each availableTags as tag}
                     <button
@@ -102,6 +102,7 @@
 
                 {#if isAddingTag}
                     <div class="flex items-center gap-2" transition:fade>
+                        <!-- svelte-ignore a11y-autofocus -->
                         <input
                                 type="text"
                                 bind:value={newTagInput}

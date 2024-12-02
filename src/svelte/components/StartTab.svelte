@@ -62,7 +62,7 @@
 {/if}
 
 <TabsRoot
-        onValueChange={(value) => activeTab = value}
+        onValueChange={(value) => activeTab = value || "project" }
         value={activeTab}
         class="w-full h-full flex flex-col"
 >

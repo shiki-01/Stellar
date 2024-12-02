@@ -60,27 +60,3 @@
         {/if}
     </div>
 </div>
-
-<style>
-    .custom-scroll {
-        scrollbar-width: thin;
-        scrollbar-color: #38bdf8 #f1f1f1;
-    }
-
-    .custom-scroll::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    .custom-scroll::-webkit-scrollbar-track {
-        background: #38bdf8;
-    }
-
-    .custom-scroll::-webkit-scrollbar-thumb {
-        background: #38bdf8;
-        border-radius: 4px;
-    }
-
-    .custom-scroll::-webkit-scrollbar-thumb:hover {
-        background: #38bdf8;
-    }
-</style>

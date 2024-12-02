@@ -64,7 +64,7 @@
 </script>
 
 <div class="flex flex-col justify-between px-4 pb-2 w-full h-full">
-    <div class="w-full overflow-y-auto h-fit max-h-[360px] flex flex-col gap-4">
+    <div class="custom-scroll w-full overflow-y-auto h-fit max-h-[360px] flex flex-col gap-4">
         <div class="flex flex-col relative">
             <label class="text-lg font-bold mb-2" for="project-name">Project Name</label>
             <input
@@ -77,11 +77,29 @@
 
         <div class="flex flex-col gap-2 relative">
             <label class="text-lg font-bold" for="project-description">Project Description</label>
-            <textarea
+            <input
                     bind:value={projectDescription}
-                    class="w-full h-20 rounded-xl p-2 resize-none border-2 border-sky-400 focus:outline-none focus:border-sky-500"
+                    class="w-full p-2 border-2 border-transparent border-b-sky-400 focus:outline-none"
                     id="project-description"
             />
+        </div>
+
+        <div class="flex flex-col gap-2 relative">
+            <label class="text-lg font-bold" for="project-size">Project Size</label>
+            <div class="flex flex-row gap-2">
+                <input
+                        class="w-1/2 border-2 border-transparent border-b-sky-400 p-2 focus:outline-none rounded-lg bg-white"
+                        id="project-size"
+                        type="number"
+                        placeholder="Width"
+                />
+                <input
+                        class="w-1/2 border-2 border-transparent border-b-sky-400 p-2 focus:outline-none rounded-lg bg-white"
+                        id="project-size"
+                        type="number"
+                        placeholder="Height"
+                />
+            </div>
         </div>
 
         <div class="flex flex-col gap-2">
